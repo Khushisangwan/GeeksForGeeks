@@ -1,22 +1,34 @@
-#include <iostream>
-using namespace std;
-
-int reverseNumber(int n) {
-    int rev = 0;
-    while (n > 0) {
-        rev = rev * 10 + (n % 10);
-        n /= 10;
+class Solution {
+  public:
+    int longestSubarray(vector<int> &arr, int k) {
+        // Code here
+          int n=arr.size();
+        vector<int>diff(n);
+        for(int i=0;i<n;i++){
+            if(arr[i]>k){
+                diff[i]=1;
+            }
+            else{
+                diff[i]=-1;
+            }
+        }
+        unordered_map<int,int>mp;
+        int prefix=0;
+        int maxlen=0;
+        for(int i=0;i<n;i++){
+            prefix+=diff[i];
+            if(prefix>0){
+                maxlen=i+1;
+            }
+            else{
+                if(mp.find(prefix-1)!=mp.end()){
+                    maxlen=max(maxlen,i-mp[prefix-1]);
+                }
+            }
+            if(mp.find(prefix)==mp.end()){
+                mp[prefix]=i;
+            }
+        }
+        return maxlen;
     }
-    return rev;
-}
-
-int main() {
-    int T;
-    cin >> T;
-    while (T--) {
-        int N;
-        cin >> N;
-        cout << reverseNumber(N) << endl;
-    }
-    return 0;
-}
+};
