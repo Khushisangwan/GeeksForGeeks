@@ -2,6 +2,7 @@
 using namespace std;
 // Count the number of paths from src to dest in a directed graph where edges are given in the form of a vector of pairs.
 // demo change
+// demo change 2
 class Solution {
     public:
         // Helper function to perform DFS and count paths from curr to dest
