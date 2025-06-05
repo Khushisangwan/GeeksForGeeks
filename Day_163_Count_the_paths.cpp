@@ -6,7 +6,7 @@ using namespace std;
 // This code uses Depth First Search (DFS) with memoization to efficiently count the paths.
 
 class Solution {
-    public:
+    public.co
         // Helper function to perform DFS and count paths from curr to dest
         int dfs(int curr, int dest, vector<vector <int>>& adj, vector <int>& vis){
                 if(curr == dest) return 1; // Reached destination, count as one path
