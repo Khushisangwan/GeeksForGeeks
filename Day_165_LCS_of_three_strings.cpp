@@ -1,6 +1,6 @@
-#define vi vector<int>
-#define vvi vector<vi>
-#define vvvi vector<vvi>
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     int lcsOf3(string& s1, string& s2, string& s3) {
