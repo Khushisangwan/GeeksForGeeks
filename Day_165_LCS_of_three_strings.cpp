@@ -1,8 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Define type aliases for easier use of 3D vectors
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vvvi = vector<vvi>;
+
+// Solution class to solve LCS of three strings
 class Solution {
 public:
+    // Function to find the length of the longest common subsequence of three strings
     int lcsOf3(string& s1, string& s2, string& s3) {
         int n = s1.length(), m = s2.length(), o = s3.length();
         
@@ -14,7 +21,7 @@ public:
             for (int j = 1; j <= m; ++j) {
                 for (int k = 1; k <= o; ++k) {
                     
-                    // If all three characters match
+                    // If all three characters match, increment the LCS length by 1
                     if (s1[i - 1] == s2[j - 1] && s2[j - 1] == s3[k - 1]) {
                         dp[i][j][k] = dp[i - 1][j - 1][k - 1] + 1;
                     } 
