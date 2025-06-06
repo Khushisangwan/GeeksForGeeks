@@ -1,3 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Search for all occurrences of a pattern in a given text using Rabin-Karp algorithm.
+// This code uses a sliding window approach with frequency counting to efficiently find all occurrences of the pattern in the text.
+
 class Solution {
   public:
     vector<int> search(string &pat, string &txt) {
