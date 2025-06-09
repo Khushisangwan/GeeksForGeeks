@@ -11,6 +11,10 @@ class Node
         right = NULL;
     }
 };*/
+#include <bits/stdc++.h>
+using namespace std;
+// This code checks if a binary search tree (BST) has a dead end.
+
 class Solution{
   public:
     vector<int> arr, leaf;
