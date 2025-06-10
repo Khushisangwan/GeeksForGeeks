@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+// This code counts the number of unique strings that can be formed by swapping characters in a given string.
+
 class Solution {
   public:
     int countStrings(string &s) {
