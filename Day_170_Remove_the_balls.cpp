@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// This code removes adjacent balls of the same color and radius from a vector and returns the number of remaining balls.
+
 class Solution {
   public:
     int findLength(vector<int> &color, vector<int> &radius) {
