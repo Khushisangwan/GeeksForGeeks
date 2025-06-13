@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// This code finds the minimum eating speed for Koko to finish all bananas in a given time limit.
+
 class Solution {
     bool solve(vector<int>&arr,int mid,int k){
         int cnt=0;
