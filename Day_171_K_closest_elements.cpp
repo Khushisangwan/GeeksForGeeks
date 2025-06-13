@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+// This code finds the k closest elements to a given value x in an array.
+
 class Solution {
   public:
   
