@@ -13,26 +13,29 @@ public:
     }
 };
 */
-
+// Solution class to check if a binary tree is symmetric
 class Solution {
-  public:
-    // Helper function to check mirror symmetry
-    bool isMirror(Node* left, Node* right) {
-        // Both nodes are null -> symmetric
-        if (!left && !right) return true;
+    public:
+        // Helper function to check if two subtrees are mirror images
+        bool isMirror(Node* left, Node* right) {
+                // If both nodes are null, they are symmetric
+                if (!left && !right) return true;
 
-        // Only one is null -> not symmetric
-        if (!left || !right) return false;
+                // If only one node is null, they are not symmetric
+                if (!left || !right) return false;
 
-        // Check values and mirror children
-        return (left->data == right->data) &&
-               isMirror(left->left, right->right) &&
-               isMirror(left->right, right->left);
-    }
+                // Check if current nodes have the same value and
+                // their children are mirrors of each other
+                return (left->data == right->data) &&
+                             isMirror(left->left, right->right) &&
+                             isMirror(left->right, right->left);
+        }
 
-    bool isSymmetric(Node* root) {
-        // A tree is symmetric if it's a mirror of itself
-        if (!root) return true;
-        return isMirror(root->left, root->right);
-    }
+        // Main function to check if the tree is symmetric
+        bool isSymmetric(Node* root) {
+                // An empty tree is symmetric
+                if (!root) return true;
+                // Check if left and right subtrees are mirrors
+                return isMirror(root->left, root->right);
+        }
 };
