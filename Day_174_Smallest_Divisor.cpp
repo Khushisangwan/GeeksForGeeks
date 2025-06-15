@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Class to find the smallest divisor of an array such that the sum of the quotients is less than or equal to k
+
 class Solution {
   public:
     int smallestDivisor(vector<int>& arr, int k) {
