@@ -11,25 +11,35 @@ using namespace std;
 
 // Return the minimum number of coins needed to make all elements of arr equal.
 // Note: The array is 0-indexed.
-    
+
 class Solution {
-  public:
-    int minimumCoins(vector<int>& arr, int k) {
-        // code here
-        int n = arr.size();
-        vector<int> prefix(n,0);
-        sort(arr.begin(), arr.end());
-        partial_sum(arr.begin(), arr.end(),prefix.begin());
-        int ans = INT_MAX;
-        int prev = 0;
-        for(int i = 0;i<n;i++)
-        {
-        int index = upper_bound(arr.begin() + i, arr.end(), arr[i] + k) - arr.begin();
-           if(i>0 && (arr[i] != arr[i-1]))
-               prev = prefix[i-1];
-            int x = prev + (prefix[n-1] - prefix[index-1]) - (n-index) *(arr[i] + k);
-             ans = min(ans, x);
+    public:
+        int minimumCoins(vector<int>& arr, int k) {
+                // Get the size of the array
+                int n = arr.size();
+                // Prefix sum array to store cumulative sums
+                vector<int> prefix(n,0);
+                // Sort the array to make processing easier
+                sort(arr.begin(), arr.end());
+                // Compute prefix sums
+                partial_sum(arr.begin(), arr.end(), prefix.begin());
+                int ans = INT_MAX; // Initialize answer to a large value
+                int prev = 0;      // To store sum of elements before current index
+                for(int i = 0; i < n; i++)
+                {
+                        // Find the first index where arr[index] > arr[i] + k
+                        int index = upper_bound(arr.begin() + i, arr.end(), arr[i] + k) - arr.begin();
+                        // If current element is different from previous, update prev sum
+                        if(i > 0 && (arr[i] != arr[i-1]))
+                                prev = prefix[i-1];
+                        // Calculate coins needed:
+                        // prev: sum of elements before i (already equal or less)
+                        // (prefix[n-1] - prefix[index-1]): sum of elements greater than arr[i]+k
+                        // (n-index): number of such elements
+                        // (arr[i] + k): target value for these elements
+                        int x = prev + (prefix[n-1] - prefix[index-1]) - (n-index) * (arr[i] + k);
+                        ans = min(ans, x); // Update answer if better
+                }
+                return ans;
         }
-        return ans;
-    }
 };
