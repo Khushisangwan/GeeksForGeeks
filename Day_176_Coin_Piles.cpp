@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: Minimum Coins
+// Contest: LeetCode - Weekly Contest 352
+// URL: https://leetcode.com/contest/weekly-contest-352/problems/minimum-coins/
+// Memory Limit: 512 MB
+// Time Limit: 2000 ms
+// You are given an array arr of n integers, and an integer k.
+// You can perform the following operation any number of times:
+// Choose an index i (0 <= i < n) and add k to arr[i].
+
+// Return the minimum number of coins needed to make all elements of arr equal.
+// Note: The array is 0-indexed.
+    
 class Solution {
   public:
     int minimumCoins(vector<int>& arr, int k) {
