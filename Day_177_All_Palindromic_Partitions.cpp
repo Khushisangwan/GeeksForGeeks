@@ -1,3 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: All Palindromic Partitions
+// Contest: LeetCode - Weekly Contest 352
+// URL: https://leetcode.com/contest/weekly-contest-352/problems/all-palindromic-partitions/
+// Memory Limit: 512 MB
+// Time Limit: 2000 ms
+// You are given a string s.
+// You can partition the string into substrings such that each substring is a palindrome.
+// Return all possible palindromic partitions of the string.
+
 class Solution {
   public:
   
