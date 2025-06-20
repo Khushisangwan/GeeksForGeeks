@@ -1,4 +1,9 @@
 
+#include<bits/stdc++.h>
+using namespace std;
+// Problem: Group Balls by Sequence
+// Contest: LeetCode - Weekly Contest 352
+// URL: https://leetcode.com/contest/weekly-contest-352/problems/group-balls-by-sequence/
 class Solution {
   public:
     bool validgroup(vector<int> &arr, int k) {
