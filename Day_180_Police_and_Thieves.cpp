@@ -1,3 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: Police and Thieves
+// Contest: LeetCode - Weekly Contest 352
+// URL: https://leetcode.com/contest/weekly-contest-352/problems/police-and-thieves/
+
 class Solution {
   public:
     int catchThieves(vector<char> &arr, int k) {
