@@ -15,40 +15,45 @@ using namespace std;
 // Space Complexity: O(n), for storing the subsets. 
 
 class Solution {
-  public:
-    vector<int> largestSubset(vector<int>& arr) {
-        int n = arr.size(), mx = 0;
-        vector<vector<int>> dp(n);
-        vector<int> ans;
-        sort(arr.begin(), arr.end());
-        
-        for(int i = 0; i < n; i++){
-            dp[i] = {arr[i]};
-            for(int j = 0; j < i; j++) {
-                if (1 + dp[j].size() >= dp[i].size() and arr[i] % arr[j] == 0) {
-                    vector<int> temp = dp[i];
-                    temp.pop_back();
-                    if (1 + dp[j].size() ==  dp[i].size()) {
-                        temp = dp[j];
-                        temp.push_back(arr[i]);
-                        dp[i] = max(dp[i], temp);
-                    } 
-                    else {
-                        dp[i] = dp[j];
-                        dp[i].push_back(arr[i]);
-                    }
+    public:
+        // Function to find the largest divisible subset
+        vector<int> largestSubset(vector<int>& arr) {
+                int n = arr.size(), mx = 0;
+                vector<vector<int>> dp(n); // dp[i] stores the largest divisible subset ending at index i
+                vector<int> ans; // To store the final answer
+                sort(arr.begin(), arr.end()); // Step 1: Sort the array
+                
+                for(int i = 0; i < n; i++){
+                        dp[i] = {arr[i]}; // Initialize each subset with the element itself
+                        for(int j = 0; j < i; j++) {
+                                // Check if arr[i] is divisible by arr[j] and if including arr[i] increases the subset size
+                                if (1 + dp[j].size() >= dp[i].size() and arr[i] % arr[j] == 0) {
+                                        vector<int> temp = dp[i];
+                                        temp.pop_back();
+                                        if (1 + dp[j].size() ==  dp[i].size()) {
+                                                // If sizes are equal, take the lexicographically larger subset
+                                                temp = dp[j];
+                                                temp.push_back(arr[i]);
+                                                dp[i] = max(dp[i], temp);
+                                        } 
+                                        else {
+                                                // Otherwise, update dp[i] with the larger subset
+                                                dp[i] = dp[j];
+                                                dp[i].push_back(arr[i]);
+                                        }
+                                }
+                        }
+                        mx = max(mx, (int) dp[i].size()); // Update the maximum subset size found so far
                 }
-            }
-            mx = max(mx, (int) dp[i].size());
+                
+                // Find the subset(s) with the maximum size
+                for (int i = 0; i < n; i++){
+                        if(dp[i].size() == mx) {
+                                if(ans.empty())
+                                        ans = dp[i];
+                                ans = max(ans, dp[i]); // Choose the lexicographically largest subset if there are multiple
+                        }
+                }
+                return ans; // Return the largest divisible subset
         }
-        
-        for (int i = 0; i < n; i++){
-            if(dp[i].size() == mx) {
-                if(ans.empty())
-                    ans = dp[i];
-                ans = max(ans, dp[i]);
-            }
-        }
-        return ans;
-    }
 };
