@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Largest Divisible Subset
+// Approach to find the largest subset of an array where every pair of elements in the subset is divisible by each other.
+
+// Steps:
+// 1. Sort the array to ensure that we can build subsets in increasing order.
+// 2. Use dynamic programming to build subsets where each element is divisible by the previous ones.
+// 3. Maintain a vector of vectors to store the largest subset ending at each index.
+// 4. Iterate through the array, checking for divisibility and updating the largest subset accordingly.
+// 5. Finally, find the largest subset from the stored subsets.
+
+// Time Complexity: O(n^2), where n is the size of the array.
+// Space Complexity: O(n), for storing the subsets. 
+
 class Solution {
   public:
     vector<int> largestSubset(vector<int>& arr) {
