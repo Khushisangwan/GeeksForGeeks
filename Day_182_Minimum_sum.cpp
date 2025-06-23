@@ -1,3 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Problem: Minimum Sum of Two Numbers Formed by Array Digits
+// Approach to find the minimum sum of two numbers formed by the digits of an array.
+// Steps:
+// 1. Sort the array to arrange digits in ascending order.
+// 2. Pair the largest digits with the smallest digits to minimize the sum.
+// 3. Use a carry to handle cases where the sum exceeds 9.
+// 4. Construct the result string by iterating through the sorted array in reverse order.
+
 class Solution {
   public:
     string minSum(vector<int> &arr) {
