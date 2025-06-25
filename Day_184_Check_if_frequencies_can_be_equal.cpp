@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: Check if frequencies can be equal
 class Solution {
   public:
     bool sameFreq(string& s) {
