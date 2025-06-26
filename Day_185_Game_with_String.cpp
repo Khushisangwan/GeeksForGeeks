@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Problem: Game with String
+// Link: https://leetcode.com/problems/game-with-string/description/
 class Solution {
   public:
     int minValue(string &s, int k) {
