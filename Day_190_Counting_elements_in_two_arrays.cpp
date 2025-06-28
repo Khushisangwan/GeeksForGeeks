@@ -1,3 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Problem: Count elements less than or equal to each element in the first array from the second array
+// Link: https://leetcode.com/problems/count-elements-in-two-arrays/description/
+// Difficulty: Medium
+// Time Complexity: O(nlogn + mlogm) where n is the size of the first array and m is the size of the second array
+
 class Solution {
   public:
     vector<int> countLessEq(vector<int>& a, vector<int>& b) {
