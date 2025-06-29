@@ -14,32 +14,41 @@ using namespace std;
 // Space Complexity: O(1) for the binary search, O(n) for the input array.
 
 class Solution {
-  public:
-    bool f(int sum , vector<int>& arr, int k){
-       int s = 0 ; 
-       for(int i : arr){
-           s += i ;
-           if(s > sum){
-               k -- ; s = i ;
-           }
-       }
-       return (k > 0 && s <= sum) ;
-    }
-    
-    int splitArray(vector<int>& arr, int k) {
-        int s = *max_element(arr.begin(), arr.end()) ; 
-        int e = accumulate(arr.begin() , arr.end() , 0) ;
-        int ans = -1 ;
-        while(s <= e){
-            int mid = s + (e-s) / 2 ;
-            if(f(mid , arr , k)){
-                ans = mid ;
-                e = mid - 1 ;
-            }
-            else{
-                s = mid + 1 ;
-            }
+    public:
+        // Helper function to check if we can split the array into at most k parts
+        // such that the largest sum among these parts is <= sum
+        bool f(int sum , vector<int>& arr, int k){
+             int s = 0 ; 
+             for(int i : arr){
+                     s += i ;
+                     // If current sum exceeds the allowed sum, start a new subarray
+                     if(s > sum){
+                             k -- ; // Use one split
+                             s = i ; // Start new subarray with current element
+                     }
+             }
+             // Return true if we can split into at most k parts and last part is valid
+             return (k > 0 && s <= sum) ;
         }
-        return ans ;
-    }
+        
+        // Main function to find the minimal largest sum after splitting array into k parts
+        int splitArray(vector<int>& arr, int k) {
+                // Lower bound: max element (can't split an element)
+                int s = *max_element(arr.begin(), arr.end()) ; 
+                // Upper bound: sum of all elements (no split)
+                int e = accumulate(arr.begin() , arr.end() , 0) ;
+                int ans = -1 ;
+                // Binary search for the minimal largest sum
+                while(s <= e){
+                        int mid = s + (e-s) / 2 ;
+                        if(f(mid , arr , k)){
+                                ans = mid ;      // Possible, try for smaller sum
+                                e = mid - 1 ;
+                        }
+                        else{
+                                s = mid + 1 ;    // Not possible, try for larger sum
+                        }
+                }
+                return ans ;
+        }
 };
