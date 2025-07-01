@@ -1,3 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: Substrings of length k with k-1 distinct elements
+// Approach: Sliding Window Technique
+// Steps:
 class Solution {
   public:
     int substrCount(string &s, int k) {
