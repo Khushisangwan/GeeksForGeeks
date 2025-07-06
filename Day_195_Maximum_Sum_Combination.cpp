@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Problem: Maximum Sum Combination
+// Link: https://practice.geeksforgeeks.org/problems/maximum-sum-combination/
 class Solution {
   public:
     vector<int> topKSumPairs(vector<int>& a, vector<int>& b, int k) {
