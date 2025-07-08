@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem: Find the next element with greater frequency
+// Approach: Use a stack to keep track of elements and their frequencies, and find the next
 class Solution {
   public:
     vector<int> findGreater(vector<int>& arr) {
