@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// This code is part of a solution to find the longest string that can be built one character at a time from an array of strings.
+// The solution uses a map to track which strings can be formed and returns the longest one.
+// The code is designed to work with the C++14 standard.
 class Solution {
   public:
     string longestString(vector<string> &arr) {
