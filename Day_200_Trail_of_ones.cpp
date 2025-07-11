@@ -1,3 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
+// This code is part of a solution to count the number of ways to form consecutive sequences of 1s in a binary representation.
+// The solution uses a mathematical approach based on Fibonacci numbers to calculate the result.
+
 class Solution {
   public:
   int fib(int n){
