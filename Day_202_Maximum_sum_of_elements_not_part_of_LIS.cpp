@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Maximum sum of elements not part of Longest Increasing Subsequence (LIS)
+// Approach: Dynamic Programming    
+
+// Steps:
+// 1. Initialize a DP array to store the length and sum of LIS ending at each index.
+// 2. Iterate through the array and for each element, check all previous elements to find
+//    the longest increasing subsequence that can be formed.
+// 3. Update the DP array with the length and sum of the LIS.
+// 4. Calculate the total sum of the array and find the minimum sum of the LIS.
+// 5. Return the difference between the total sum and the minimum sum of the LIS.
+
+// Time Complexity: O(n^2) where n is the number of elements in the array
+// Space Complexity: O(n) for the DP array.
+
 class Solution {
   public:
     
