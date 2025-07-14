@@ -1,7 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Minimum cuts to segment a binary string into parts that are powers of 5
+// Approach: Dynamic Programming
+
+// Steps:
+// 1. Initialize a DP array to store the minimum cuts needed for each prefix of the string.
+// 2. Use a set to store powers of 5 up to a certain limit (1 << 30).
+// 3. Iterate through the string, and for each position, check all possible segments that
+//    can be formed starting from that position.
+// 4. If the segment is a power of 5 and the next position has a valid cut, update the DP array.
+// 5. Return the minimum cuts needed for the entire string or -1 if it's not possible.
+
+// Time Complexity: O(n^2) where n is the length of the string
+// Space Complexity: O(n) for the DP array.
+
 class Solution {
   public:
     int cuts(string &s) {
-        // code here
         int n = s.size() , INF = n + 1;
         vector<int> dp(n + 1 , INF);
         dp[n] = 0;
