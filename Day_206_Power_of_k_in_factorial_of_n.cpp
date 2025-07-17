@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Find the maximum power of k in the factorial of n
+// Approach: Count the prime factors of k and their frequencies, then count how many times each prime factor can
+//           divide n! using Legendre's formula.
+
+// Steps:
+// 1. Sieve of Eratosthenes to find all primes up to n.
+// 2. Factor k into its prime factors and their frequencies.
+// 3. For each prime factor, use Legendre's formula to count how many times it divides n!.
+// 4. Divide the count by the frequency of the prime factor in k to get the maximum power.
+// 5. Return the minimum of these values as the answer.
+
+// Time Complexity: O(n log log n + log k) for the sieve and factorization, plus O(log n) for counting prime factors.
+// Space Complexity: O(n) for the sieve and O(log k) for storing prime factors.
+
 class Solution {
   public:
     int maxKPower(int n, int k) {
