@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem: Find the product of the three largest distinct integers from 1 to n that are not divisible by 2 or 3.
+// Approach: The three largest integers that are not divisible by 2 or 3 can be
+//           determined based on the value of n. If n is even and divisible by 3, we can directly use n, n-1, and n-2.
+//           If n is even but not divisible by 3, we can use n, n
+
 
 class Solution {
   public:
