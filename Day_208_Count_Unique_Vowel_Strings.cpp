@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem: Count the number of unique vowel strings that can be formed using the characters in a given string.
+// Approach: We can use a map to count the frequency of each vowel in the string. The result is calculated as the product of the factorial of the number of unique vowels and the product of their frequencies.
 
 class Solution {
   public:
