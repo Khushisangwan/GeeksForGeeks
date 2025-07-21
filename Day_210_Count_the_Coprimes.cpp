@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Count the number of pairs (i, j) such that gcd(arr[i], arr[j]) = 1 for all i < j in the array `arr`.
+// Approach: Use the Möbius function and inclusion-exclusion principle to count coprime pairs efficiently.
 
 class Solution {
   public:
