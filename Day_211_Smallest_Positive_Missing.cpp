@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem Statement: Find the smallest positive missing number in the array `arr`.
+// Approach: Use a hash set to track the numbers present in the array and find the smallest missing positive integer.
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(n), for the hash set.
 class Solution {
   public:
     int missingNumber(vector<int> &arr) {
