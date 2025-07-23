@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Calculate the sum of all subarrays of the array `arr`.
+// Approach: Use the contribution technique to calculate the sum of all subarrays efficiently.
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1), no extra space used.
 class Solution {
   public:
     int subarraySum(vector<int>& arr) {
