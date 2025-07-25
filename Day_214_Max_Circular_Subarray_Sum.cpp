@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Find the maximum sum of a circular subarray.
+// Approach: Calculate both the maximum subarray sum and the circular subarray sum.
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1), no extra space used.
+
 class Solution {
   public:
     // arr: input array
