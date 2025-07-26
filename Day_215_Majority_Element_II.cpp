@@ -1,4 +1,5 @@
-
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     // Function to find the majority elements in the array
