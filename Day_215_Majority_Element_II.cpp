@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Find all elements that occur more than n/3 times in the array
+// Approach: Use Boyer-Moore Voting Algorithm to find potential candidates and then verify their counts.
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1), no extra space used for counting candidates.
+// Note: The solution assumes that the input array is non-empty.
 class Solution {
   public:
     // Function to find the majority elements in the array
