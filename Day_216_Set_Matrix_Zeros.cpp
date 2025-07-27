@@ -1,5 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Set matrix rows and columns to zero if an element is zero
+// Approach: Traverse the matrix and mark rows and columns that need to be zeroed.
+// Time Complexity: O(n * m), where n is the number of rows and m is
+// the number of columns in the matrix.
+// Space Complexity: O(n + m) for storing the rows and columns to be zeroed.
+// Note: The solution assumes that the input matrix is non-empty.
+
 class Solution {
   public:
     void setMatrixZeroes(vector<vector<int>> &mat) {
