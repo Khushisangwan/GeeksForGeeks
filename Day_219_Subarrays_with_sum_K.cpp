@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Count the number of subarrays with a sum equal to k
+// Approach: Use a hashmap to store the frequency of prefix sums
+// Time Complexity: O(n), where n is the length of the array.
+// Space Complexity: O(n), for storing the prefix sums in the hashmap.
+
 class Solution {
   public:
     int cntSubarrays(vector<int> &arr, int k) {
