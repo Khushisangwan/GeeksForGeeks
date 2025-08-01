@@ -1,5 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem Statement: Count the number of subarrays where the difference between the number of vowels and consonants is zero
+// Approach: Use a prefix sum technique with a hashmap to count the occurrences of each difference
+// Steps:
+// 1. Create a function to count the number of vowels in a string.
+// 2. For each string, calculate the difference between the number of vowels and consonants.
+// 3. Use a hashmap to keep track of the cumulative sum of differences.
+// 4. For each difference, check how many times it has occurred before and add that to the answer.
+// 5. Return the total count of balanced subarrays.
+// Time Complexity: O(n), where n is the total number of characters in all strings, since we traverse each string once.
 class Solution {
   public:
     int countBalanced(vector<string>& arr) {
