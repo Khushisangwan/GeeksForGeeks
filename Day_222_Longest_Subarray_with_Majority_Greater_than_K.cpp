@@ -2,6 +2,15 @@
 // User function Template for C++
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Find the length of the longest subarray where the number of elements greater than k is more than those less than or equal to k
+// Approach: Use a prefix sum technique with a hashmap to track the cumulative sum of differences
+// Steps:
+// 1. Convert the array into a difference array where elements greater than k are +1 and others are -1.
+// 2. Use a hashmap to store the first occurrence of each prefix sum.
+// 3. Traverse the difference array, updating the prefix sum and checking if it has been seen before.
+// 4. If the prefix sum is positive, update the maximum length to the current index + 1.
+// 5. If the prefix sum is negative, check if (prefix - 1) exists in the hashmap to find the length of the subarray.
+// 6. Return the maximum length found.
 class Solution {
   public:
     int longestSubarray(vector<int> &arr, int k) {
