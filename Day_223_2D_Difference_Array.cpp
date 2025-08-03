@@ -1,5 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Implement a 2D difference array to apply range updates efficiently on a matrix
+// Approach: Use a 2D difference array to handle range updates in constant time
+// Steps:
+// 1. Initialize a difference array of size (n+1)x(m+1) to handle the matrix of size nxm.
+// 2. For each operation, update the difference array at the corners of the specified submatrix.
+// 3. After processing all operations, compute the prefix sums for both rows and columns to get the final values.
+// 4. Update the original matrix with the computed values from the difference array.
+// 5. Return the updated matrix.
 class Solution {
   public:
     vector<vector<int>> applyDiff2D(vector<vector<int>>& mat,
