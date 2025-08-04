@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     private:
     int kadansAlgorithm(vector<int> &temp){
