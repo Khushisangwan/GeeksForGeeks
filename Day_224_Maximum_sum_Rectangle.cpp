@@ -1,5 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Problem Statement: Find the maximum sum rectangle in a 2D matrix
+// Approach: Use Kadane's algorithm to find the maximum sum subarray for each column range
+// Steps:
+// 1. Iterate over all pairs of columns (left and right).
+// 2. For each pair, create a temporary array that sums the values between these two columns for each row.
+// 3. Apply Kadane's algorithm on this temporary array to find the maximum sum subarray.
+// 4. Keep track of the maximum sum found across all column pairs.
+
 class Solution {
     private:
     int kadansAlgorithm(vector<int> &temp){
