@@ -9,21 +9,25 @@ using namespace std;
 // Time Complexity: O(n), where n is the length of the input string
 
 class Solution {
-  public:
-    bool isPalinSent(string &s) {
-        // code here
-         string check;
-        for (char ch : s)
-        {
-            if (isalnum(ch)) check += tolower(ch);
-        }
-        
-        int l = 0, r = check.size() - 1;
-        while (l < r)
-        {
-            if (check[l++] != check[r--]) return false;
-        }
+    public:
+        bool isPalinSent(string &s) {
+                // Create a new string to store only alphanumeric characters in lowercase
+                string check;
+                for (char ch : s)
+                {
+                        if (isalnum(ch)) // Ignore non-alphanumeric characters
+                                check += tolower(ch); // Convert to lowercase and add to 'check'
+                }
+                
+                // Use two pointers to check for palindrome
+                int l = 0, r = check.size() - 1;
+                while (l < r)
+                {
+                        if (check[l++] != check[r--]) // If mismatch found, not a palindrome
+                                return false;
+                }
 
-        return true;
-    }
+                // All characters matched, it's a palindrome
+                return true;
+        }
 };
