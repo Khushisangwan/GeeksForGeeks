@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem Statement: Find the minimum time difference between pairs of time strings
+// Approach: Convert time strings to seconds, sort them, and find the minimum difference
+
+// Steps:   
+// 1. Convert each time string to total seconds from the start of the day.
+// 2. Sort the array of seconds.
+// 3. Calculate the minimum difference between consecutive times.
+// 4. Also consider the difference between the last and first time to account for the circular nature of time.
+// 5. Return the minimum of these differences.
+
+// Time Complexity: O(n log n) due to sorting, where n is the number of time strings    
+// Space Complexity: O(n) for storing seconds in an array
+
 class Solution {
   public:
     int minDifference(vector<string> &arr) {
