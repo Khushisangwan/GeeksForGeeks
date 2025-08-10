@@ -1,6 +1,16 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+// Problem Statement: Count the number of palindromic substrings in a given string
+// Approach: Use dynamic programming to check for palindromic substrings
+// Steps:
+// 1. Initialize a 2D vector to keep track of palindromic substrings.
+// 2. Mark single characters as palindromes.
+// 3. Check for two-character palindromes.
+// 4. Use a gap-based approach to check for longer palindromic substrings.
+// 5. Count the total number of palindromic substrings found.
+// Time Complexity: O(n^2), where n is the length of the string, as we check each substring.
+// Space Complexity: O(n^2), for the 2D vector used to store palindrome checks.
 class Solution {
   public:
     int countPS(string &s) {
