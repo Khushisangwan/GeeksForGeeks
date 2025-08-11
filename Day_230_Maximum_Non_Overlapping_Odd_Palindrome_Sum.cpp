@@ -1,3 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Problem Statement: Find the maximum sum of non-overlapping odd-length palindromes in a given string
+// Approach: Use Manacher's algorithm to find all odd-length palindromes and calculate the maximum sum of non-overlapping ones.
+//// Steps:
+// 1. Use Manacher's algorithm to find the radius of odd-length palindromes centered at each character.
+// 2. Create two arrays to store the best palindrome lengths ending and starting at each index.
+// 3. Iterate through the string to fill these arrays with the maximum lengths of palindromes.
+// 4. Use a two-pointer technique to find the maximum sum of non-overlapping palindromes.
+// Time Complexity: O(n), where n is the length of the string, as we process each character a constant number of times.
+// Space Complexity: O(n), for the arrays used to store palindrome lengths.
 class Solution {
   public:
     int maxSum(string &s) {
