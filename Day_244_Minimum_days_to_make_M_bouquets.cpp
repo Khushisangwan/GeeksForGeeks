@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Minimum days to make M bouquets
+// Approach: Use binary search on the answer space to find the minimum number of days
+
+// Steps:
+// 1. Define a function ok that checks if it is possible to make m bouquets with k flowers each by day mid.
+// 2. Use binary search on the range [min(arr), max(arr)] to find the minimum number of days.
+// 3. For each mid value in the binary search, use ok to check if making the bouquets is feasible.
+// 4. If feasible, update the answer and search in the lower half.
+// 5. If not feasible, search in the upper half.
+// 6. Return the minimum number of days found.
+
+// Time Complexity: O(n log(max(arr) - min(arr))), where n is the number of flowers.
+// Space Complexity: O(1) for the binary search and O(1) for the
+
 class Solution {
   public:
     bool ok(vector<int> &arr,int k,int m,int mid){
