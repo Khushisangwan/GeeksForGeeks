@@ -18,27 +18,16 @@ using namespace std;
 
 class Solution {
   public:
-    void solve(int idx, int sum, int n, vector<int>nums, set<int>&ans, vector<vector<bool>>&dp){
-        if(idx >= n){
-            ans.insert(sum);
-            return;
+    int getMinDiff(vector<int> &arr, int k) {
+        int n = arr.size();
+        sort(arr.begin(), arr.end());
+        int res = arr[n - 1] - arr[0];
+        
+        for(int i = 1; i < arr.size(); i++){
+            int minH = min(arr[0] + k, arr[i] - k);
+            int maxH = max(arr[n - 1] - k, arr[i - 1] + k);
+            res = min( res, maxH - minH);
         }
-        
-        if(dp[idx][sum]) return;
-        
-        dp[idx][sum] = true;
-        
-        solve(idx+1 , sum , n , nums , ans , dp);
-        solve(idx+1 , sum + nums[idx] , n , nums , ans , dp);
-    }
- 
-    vector<int> DistinctSum(vector<int>nums){
-        int n = nums.size();
-        int maxSum = accumulate(nums.begin() , nums.end() , 0);
-        vector<vector<bool>>dp(n , vector<bool>(maxSum + 1 , false));
-        set<int>ans;
-
-        solve(0 , 0 , n , nums , ans , dp);
-        return vector<int>(ans.begin() , ans.end());
+        return res;
     }
 };
