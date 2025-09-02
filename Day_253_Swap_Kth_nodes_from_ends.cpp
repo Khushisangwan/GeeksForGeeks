@@ -10,7 +10,8 @@ class Node {
     }
 };
 */
-
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     Node* swapKth(Node* head, int k) {
