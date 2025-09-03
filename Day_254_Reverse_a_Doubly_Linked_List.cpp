@@ -12,6 +12,8 @@ class Node {
 };
 
 */
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     Node *reverse(Node *head) {
