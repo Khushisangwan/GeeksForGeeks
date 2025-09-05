@@ -9,6 +9,8 @@
         next = null;
     }
 }*/
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     static Node segregate(Node head) {
         // code here
