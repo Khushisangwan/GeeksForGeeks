@@ -8,6 +8,8 @@ class Node
     Node(int d) {data = d; next = null; }
 }
 */
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution {
     // Function to find the length of a loop in the linked list.
