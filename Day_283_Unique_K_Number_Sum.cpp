@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     void get(vector<vector<int>> & ans, vector<int> a, int n, int k, int j){
