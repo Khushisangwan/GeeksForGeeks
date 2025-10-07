@@ -11,7 +11,8 @@ public:
     }
 };
 */
-
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     vector<int> bottomView(Node *root) {
