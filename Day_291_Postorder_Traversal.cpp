@@ -12,6 +12,8 @@ class Node {
     }
 };
 */
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution {
     void post(Node* root, vector<int>& ans){
