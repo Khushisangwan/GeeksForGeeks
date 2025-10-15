@@ -11,7 +11,8 @@ class Node {
     }
 };
 */
-
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     int kthSmallest(Node *root, int &k) {
