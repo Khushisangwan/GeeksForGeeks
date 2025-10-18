@@ -10,6 +10,8 @@ class Node {
     }
 };
 */
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     void inorder(Node* root, int &count) {
