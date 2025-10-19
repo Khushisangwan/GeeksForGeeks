@@ -15,29 +15,39 @@ class Node {
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
-  public:
-    void getInorder(vector<int> &inorder,Node* root){
-        if(root==NULL) return;
-        getInorder(inorder,root->left);
-        inorder.push_back(root->data);
-        getInorder(inorder,root->right);
-    }
-    vector<int> getKClosest(Node* root, int target, int k) {
-        vector<int> inorder;
-        getInorder(inorder,root);
-        int n=inorder.size();
-        // [4,8,10,12,14,20,22]
-        priority_queue<pair<int,int>> pq;
-        for(int i=0;i<n;i++){
-            pq.push({abs(inorder[i]-target),inorder[i]});
-            if(pq.size()>k) pq.pop();
+    public:
+        // Helper function to get inorder traversal of BST
+        void getInorder(vector<int> &inorder,Node* root){
+                if(root==NULL) return; // Base case: null node
+                getInorder(inorder,root->left); // Traverse left subtree
+                inorder.push_back(root->data); // Visit current node
+                getInorder(inorder,root->right); // Traverse right subtree
         }
-        vector<int> ans;
-        while(!pq.empty()){
-            ans.push_back(pq.top().second);
-            pq.pop();
-        }
-        return ans;
         
-    }
+        vector<int> getKClosest(Node* root, int target, int k) {
+                // Get sorted array from BST using inorder traversal
+                vector<int> inorder;
+                getInorder(inorder,root);
+                int n=inorder.size();
+                
+                // Use max heap to maintain k closest elements
+                // Pair format: {absolute_difference, node_value}
+                priority_queue<pair<int,int>> pq;
+                
+                // Process each element in inorder array
+                for(int i=0;i<n;i++){
+                        // Push difference and value to max heap
+                        pq.push({abs(inorder[i]-target),inorder[i]});
+                        // Keep only k elements in heap
+                        if(pq.size()>k) pq.pop();
+                }
+                
+                // Extract k closest values from heap
+                vector<int> ans;
+                while(!pq.empty()){
+                        ans.push_back(pq.top().second);
+                        pq.pop();
+                }
+                return ans;
+        }
 };
