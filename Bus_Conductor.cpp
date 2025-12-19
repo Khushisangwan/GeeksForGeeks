@@ -1,4 +1,5 @@
-
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         int findMoves(vector<int>& chairs, vector<int>& passengers) {
