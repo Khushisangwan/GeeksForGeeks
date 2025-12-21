@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     vector<int> countXInRange(vector<int>& arr, vector<vector<int>>& queries) {
