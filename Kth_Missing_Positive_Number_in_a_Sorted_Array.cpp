@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
      int kthMissing(vector<int> &arr, int k) {
