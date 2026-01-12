@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
   public:
     vector<int> maxOfSubarrays(vector<int>& arr, int k) {
